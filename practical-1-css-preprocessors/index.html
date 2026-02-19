@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карточка товара - CSS Preprocessors</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="product-card product-card--featured">
+            <div class="product-card__image-wrapper">
+                <img src="https://via.placeholder.com/300x200/3498db/ffffff?text=Товар" alt="Изображение товара" class="product-card__image">
+                <span class="product-card__badge">Хит продаж</span>
+            </div>
+            <div class="product-card__content">
+                <h2 class="product-card__title">Современный ноутбук</h2>
+                <p class="product-card__description">
+                    Высокопроизводительный ноутбук для работы и развлечений.
+                    Процессор последнего поколения, 16 ГБ оперативной памяти,
+                    512 ГБ SSD накопитель. Идеально подходит для программирования,
+                    дизайна и игр.
+                </p>
+                <div class="product-card__details">
+                    <span class="product-card__price">89 990 ₽</span>
+                    <span class="product-card__rating">⭐ 4.8</span>
+                </div>
+                <button class="btn btn--primary">В корзину</button>
+                <button class="btn btn--secondary">Подробнее</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-card__image-wrapper">
+                <img src="https://via.placeholder.com/300x200/2ecc71/ffffff?text=Товар+2" alt="Изображение товара" class="product-card__image">
+            </div>
+            <div class="product-card__content">
+                <h2 class="product-card__title">Беспроводная мышь</h2>
+                <p class="product-card__description">
+                    Эргономичная беспроводная мышь с точным оптическим сенсором.
+                    Подходит для работы и игр.
+                </p>
+                <div class="product-card__details">
+                    <span class="product-card__price">1 990 ₽</span>
+                    <span class="product-card__rating">⭐ 4.5</span>
+                </div>
+                <button class="btn btn--primary">В корзину</button>
+                <button class="btn btn--secondary">Подробнее</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-card__image-wrapper">
+                <img src="https://via.placeholder.com/300x200/e74c3c/ffffff?text=Товар+3" alt="Изображение товара" class="product-card__image">
+            </div>
+            <div class="product-card__content">
+                <h2 class="product-card__title">Механическая клавиатура</h2>
+                <p class="product-card__description">
+                    Профессиональная механическая клавиатура с RGB подсветкой
+                    и программируемыми клавишами.
+                </p>
+                <div class="product-card__details">
+                    <span class="product-card__price">5 490 ₽</span>
+                    <span class="product-card__rating">⭐ 4.9</span>
+                </div>
+                <button class="btn btn--primary">В корзину</button>
+                <button class="btn btn--secondary">Подробнее</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

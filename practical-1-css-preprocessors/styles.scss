@@ -1,0 +1,189 @@
+// Переменные (минимум 2)
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$accent-color: #e74c3c;
+$dark-color: #2c3e50;
+$light-color: #ecf0f1;
+$white: #ffffff;
+$border-radius: 12px;
+$spacing-small: 8px;
+$spacing-medium: 16px;
+$spacing-large: 24px;
+$font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$transition-speed: 0.3s;
+
+// Миксин для создания кнопок (минимум 1 миксин)
+@mixin button($bg-color, $text-color: $white) {
+    padding: 12px 24px;
+    background-color: $bg-color;
+    color: $text-color;
+    border: none;
+    border-radius: $border-radius;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all $transition-speed ease;
+    text-decoration: none;
+    display: inline-block;
+    
+    &:hover {
+        background-color: darken($bg-color, 10%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba($bg-color, 0.3);
+    }
+    
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+// Миксин для создания теней
+@mixin card-shadow($level: 1) {
+    @if $level == 1 {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    } @else if $level == 2 {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+}
+
+// Миксин для адаптивного дизайна
+@mixin responsive($breakpoint) {
+    @if $breakpoint == mobile {
+        @media (max-width: 768px) {
+            @content;
+        }
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: $spacing-large;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $spacing-large;
+    
+    @include responsive(mobile) {
+        grid-template-columns: 1fr;
+        gap: $spacing-medium;
+    }
+}
+
+// Вложенная структура селекторов для карточки товара
+.product-card {
+    background: $white;
+    border-radius: $border-radius;
+    overflow: hidden;
+    @include card-shadow(1);
+    transition: all $transition-speed ease;
+    
+    &:hover {
+        @include card-shadow(2);
+        transform: translateY(-4px);
+    }
+    
+    &--featured {
+        border: 3px solid $primary-color;
+        
+        .product-card__title {
+            color: $primary-color;
+        }
+    }
+    
+    &__image-wrapper {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        background: $light-color;
+    }
+    
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform $transition-speed ease;
+        
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    
+    &__badge {
+        position: absolute;
+        top: $spacing-medium;
+        right: $spacing-medium;
+        background: $accent-color;
+        color: $white;
+        padding: $spacing-small $spacing-medium;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    
+    &__content {
+        padding: $spacing-large;
+    }
+    
+    &__title {
+        font-size: 24px;
+        color: $dark-color;
+        margin-bottom: $spacing-medium;
+        font-weight: 700;
+    }
+    
+    &__description {
+        color: lighten($dark-color, 20%);
+        margin-bottom: $spacing-medium;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    
+    &__details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: $spacing-large;
+        padding: $spacing-medium 0;
+        border-top: 1px solid $light-color;
+        border-bottom: 1px solid $light-color;
+    }
+    
+    &__price {
+        font-size: 28px;
+        font-weight: 700;
+        color: $primary-color;
+    }
+    
+    &__rating {
+        font-size: 18px;
+        color: $dark-color;
+    }
+}
+
+.btn {
+    margin-right: $spacing-small;
+    margin-top: $spacing-small;
+    
+    &--primary {
+        @include button($primary-color);
+    }
+    
+    &--secondary {
+        @include button($light-color, $dark-color);
+    }
+}

@@ -1,0 +1,6 @@
+# Exclude all README files
+README.md
+**/README.md
+
+# IDE
+.idea/
