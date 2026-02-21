@@ -1,4 +1,4 @@
-// Переменные (минимум 2)
+
 $primary-color: #3498db;
 $secondary-color: #2ecc71;
 $accent-color: #e74c3c;
@@ -12,7 +12,7 @@ $spacing-large: 24px;
 $font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 $transition-speed: 0.3s;
 
-// Миксин для создания кнопок (минимум 1 миксин)
+
 @mixin button($bg-color, $text-color: $white) {
     padding: 12px 24px;
     background-color: $bg-color;
@@ -37,7 +37,7 @@ $transition-speed: 0.3s;
     }
 }
 
-// Миксин для создания теней
+
 @mixin card-shadow($level: 1) {
     @if $level == 1 {
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -46,7 +46,7 @@ $transition-speed: 0.3s;
     }
 }
 
-// Миксин для адаптивного дизайна
+
 @mixin responsive($breakpoint) {
     @if $breakpoint == mobile {
         @media (max-width: 768px) {
