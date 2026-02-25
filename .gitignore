@@ -1,10 +1,9 @@
-# Exclude all README files
-README.md
-**/README.md
-
 # IDE
 .idea/
 
 # Node
 node_modules/
 package-lock.json
+
+# PDF
+*.pdf
