@@ -53,6 +53,21 @@ $dangerBg: rgba(239, 68, 68, 0.12);
   letter-spacing: 0.3px;
 }
 
+.productImg {
+  position: relative;
+  padding-bottom: 30%;
+  width: 30%;
+
+  & img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
 .main {
   flex: 1;
   display: flex;

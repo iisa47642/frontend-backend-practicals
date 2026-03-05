@@ -11,6 +11,9 @@ export default function ProductItem({ product, onEdit, onDelete }) {
         <div className="productStock">&#128230; {product.stock} шт.</div>
       </div>
       <div className="productDesc">{product.description}</div>
+        <div className="productImg">
+            <img src={product.url} alt="aaa"/>
+        </div>
       <div className="productActions">
         <button className="btn" onClick={() => onEdit(product)}>
           Редактировать

@@ -6,12 +6,14 @@ export default function ProductModal({ open, mode, initialProduct, onClose, onSu
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
   const [stock, setStock] = useState('');
+  const [url, setUrl] = useState("");
 
   useEffect(() => {
     if (!open) return;
     setName(initialProduct?.name ?? '');
     setCategory(initialProduct?.category ?? '');
     setDescription(initialProduct?.description ?? '');
+    setUrl(initialProduct?.url ?? '');
     setPrice(initialProduct?.price != null ? String(initialProduct.price) : '');
     setStock(initialProduct?.stock != null ? String(initialProduct.stock) : '');
   }, [open, initialProduct]);
@@ -26,6 +28,7 @@ export default function ProductModal({ open, mode, initialProduct, onClose, onSu
     const trimmedCategory = category.trim();
     const parsedPrice = Number(price);
     const parsedStock = Number(stock);
+    const trimmedUrl = url.trim();
 
     if (!trimmedName) {
       alert('Введите название товара');
@@ -51,6 +54,7 @@ export default function ProductModal({ open, mode, initialProduct, onClose, onSu
       description: description.trim(),
       price: parsedPrice,
       stock: parsedStock,
+      url: trimmedUrl
     });
   };
 
@@ -65,27 +69,38 @@ export default function ProductModal({ open, mode, initialProduct, onClose, onSu
         <form className="form" onSubmit={handleSubmit}>
           <label className="label">
             Название
-            <input className="input" value={name} onChange={(e) => setName(e.target.value)} placeholder="Например, iPhone 15" autoFocus />
+            <input className="input" value={name} onChange={(e) => setName(e.target.value)}
+                   placeholder="Например, iPhone 15" autoFocus/>
           </label>
 
           <label className="label">
             Категория
-            <input className="input" value={category} onChange={(e) => setCategory(e.target.value)} placeholder="Например, Смартфоны" />
+            <input className="input" value={category} onChange={(e) => setCategory(e.target.value)}
+                   placeholder="Например, Смартфоны"/>
           </label>
 
           <label className="label">
             Описание
-            <input className="input" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Краткое описание товара" />
+            <input className="input" value={description} onChange={(e) => setDescription(e.target.value)}
+                   placeholder="Краткое описание товара"/>
           </label>
 
           <label className="label">
             Цена (&#8381;)
-            <input className="input" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="Например, 99990" inputMode="numeric" />
+            <input className="input" value={price} onChange={(e) => setPrice(e.target.value)}
+                   placeholder="Например, 99990" inputMode="numeric"/>
+          </label>
+
+          <label className="label">
+            Ссылка на картинку
+            <input className="input" value={url} onChange={(e) => setUrl(e.target.value)}
+                   placeholder=""/>
           </label>
 
           <label className="label">
             На складе (шт.)
-            <input className="input" value={stock} onChange={(e) => setStock(e.target.value)} placeholder="Например, 10" inputMode="numeric" />
+            <input className="input" value={stock} onChange={(e) => setStock(e.target.value)} placeholder="Например, 10"
+                   inputMode="numeric"/>
           </label>
 
           <div className="modal__footer">
