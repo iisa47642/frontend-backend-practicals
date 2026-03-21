@@ -1,0 +1,154 @@
+.users-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.users-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.user-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &.blocked {
+    opacity: 0.6;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    .user-name {
+      font-weight: 600;
+      color: #1a1a2e;
+    }
+
+    .user-email {
+      color: #888;
+      font-size: 13px;
+    }
+
+    .role-badge {
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+
+      &.role-user {
+        background: #eef;
+        color: #4361ee;
+      }
+
+      &.role-seller {
+        background: #fef3e2;
+        color: #e67e22;
+      }
+
+      &.role-admin {
+        background: #fde;
+        color: #c0392b;
+      }
+    }
+
+    .blocked-badge {
+      background: #fee;
+      color: #c33;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+    }
+  }
+
+  .user-actions {
+    display: flex;
+    gap: 8px;
+
+    button {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .btn-edit {
+      background: #f0ad4e;
+      color: #fff;
+
+      &:hover {
+        background: #e09b3d;
+      }
+    }
+
+    .btn-block {
+      background: #e74c3c;
+      color: #fff;
+
+      &:hover {
+        background: #c0392b;
+      }
+    }
+  }
+
+  .user-edit-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+
+    input, select {
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+      outline: none;
+
+      &:focus {
+        border-color: #4361ee;
+      }
+    }
+
+    .btn-save {
+      padding: 8px 16px;
+      background: #27ae60;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+
+      &:hover {
+        background: #219a52;
+      }
+    }
+
+    .btn-cancel {
+      padding: 8px 16px;
+      background: #95a5a6;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+
+      &:hover {
+        background: #7f8c8d;
+      }
+    }
+  }
+}
+
+.empty {
+  text-align: center;
+  color: #999;
+  padding: 40px;
+}
