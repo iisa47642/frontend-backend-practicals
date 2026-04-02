@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#4285f4">
+    <link rel="apple-touch-icon" href="/icons/favicon-128x128.png">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Заметки (13-14)</title>
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+    <link rel="icon" href="icons/favicon.ico" sizes="16x16" type="image/x-icon">
+</head>
+<body>
+    <div class="container" style="margin-top: 2rem;">
+        <h1 class="is-center">Мои заметки - оффлайн-приложение</h1>
+        <form id="note-form" class="row is-center">
+            <input class="col-9" type="text" id="note-input" placeholder="Введите заметку" required>
+            <button class="col-3 button primary" type="submit">Добавить</button>
+        </form>
+        <h2 class="is-center" style="margin-top: 2rem;">Список заметок</h2>
+        <ul id="notes-list" style="list-style: none; padding-left: 0;"></ul>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
